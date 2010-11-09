@@ -79,7 +79,7 @@ static const char zeros[PAC_ALIGNMENT] = { 0 };
  *
  */
 
-krb5_error_code
+KRB5_LIB_FUNCTION krb5_error_code KRB5_LIB_CALL
 krb5_pac_parse(krb5_context context, const void *ptr, size_t len,
 	       krb5_pac *pac)
 {
@@ -224,7 +224,7 @@ out:
     return ret;
 }
 
-krb5_error_code
+KRB5_LIB_FUNCTION krb5_error_code KRB5_LIB_CALL
 krb5_pac_init(krb5_context context, krb5_pac *pac)
 {
     krb5_error_code ret;
@@ -256,7 +256,7 @@ krb5_pac_init(krb5_context context, krb5_pac *pac)
     return 0;
 }
 
-krb5_error_code
+KRB5_LIB_FUNCTION krb5_error_code KRB5_LIB_CALL
 krb5_pac_add_buffer(krb5_context context, krb5_pac p,
 		    uint32_t type, const krb5_data *data)
 {
@@ -338,7 +338,7 @@ krb5_pac_add_buffer(krb5_context context, krb5_pac p,
  * @ingroup krb5_pac
  */
 
-krb5_error_code
+KRB5_LIB_FUNCTION krb5_error_code KRB5_LIB_CALL
 krb5_pac_get_buffer(krb5_context context, krb5_pac p,
 		    uint32_t type, krb5_data *data)
 {
@@ -368,7 +368,7 @@ krb5_pac_get_buffer(krb5_context context, krb5_pac p,
  *
  */
 
-krb5_error_code
+KRB5_LIB_FUNCTION krb5_error_code KRB5_LIB_CALL
 krb5_pac_get_types(krb5_context context,
 		   krb5_pac p,
 		   size_t *len,
@@ -393,7 +393,7 @@ krb5_pac_get_types(krb5_context context,
  *
  */
 
-void
+KRB5_LIB_FUNCTION void KRB5_LIB_CALL
 krb5_pac_free(krb5_context context, krb5_pac pac)
 {
     krb5_data_free(&pac->data);
@@ -720,7 +720,7 @@ out:
  * @ingroup krb5_pac
  */
 
-krb5_error_code
+KRB5_LIB_FUNCTION krb5_error_code KRB5_LIB_CALL
 krb5_pac_verify(krb5_context context,
 		const krb5_pac pac,
 		time_t authtime,

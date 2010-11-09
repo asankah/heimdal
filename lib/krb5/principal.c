@@ -721,7 +721,7 @@ krb5_build_principal(krb5_context context,
  * @ingroup krb5_principal
  */
 
-krb5_error_code KRB5_LIB_FUNCTION
+KRB5_LIB_FUNCTION krb5_error_code KRB5_LIB_CALL
 krb5_make_principal(krb5_context context,
 		    krb5_principal *principal,
 		    krb5_const_realm realm,
@@ -1536,7 +1536,7 @@ static const struct {
  * @ingroup krb5_principal
  */
 
-krb5_error_code
+KRB5_LIB_FUNCTION krb5_error_code KRB5_LIB_CALL
 krb5_parse_nametype(krb5_context context, const char *str, int32_t *nametype)
 {
     size_t i;
@@ -1558,7 +1558,7 @@ krb5_parse_nametype(krb5_context context, const char *str, int32_t *nametype)
  * @ingroup krb5_principal
  */
 
-krb5_boolean
+KRB5_LIB_FUNCTION krb5_boolean KRB5_LIB_CALL
 krb5_principal_is_krbtgt(krb5_context context, krb5_const_principal p)
 {
     return p->name.name_string.len == 2 &&

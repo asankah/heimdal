@@ -4566,7 +4566,7 @@ wrapped_length_dervied (krb5_context context,
  * Return the size of an encrypted packet of length `data_len'
  */
 
-size_t
+KRB5_LIB_FUNCTION size_t KRB5_LIB_CALL
 krb5_get_wrapped_length (krb5_context context,
 			 krb5_crypto  crypto,
 			 size_t       data_len)
@@ -4612,7 +4612,7 @@ crypto_overhead_dervied (krb5_context context,
     return res;
 }
 
-size_t
+KRB5_LIB_FUNCTION size_t KRB5_LIB_CALL
 krb5_crypto_overhead (krb5_context context, krb5_crypto crypto)
 {
     if (derived_crypto (context, crypto))
