@@ -740,8 +740,8 @@ _krb5_get_default_config_config_files_from_registry()
 
     rcode = RegOpenKeyEx(HKEY_CURRENT_USER, KeyName, 0, KEY_READ, &key);
     if (rcode == ERROR_SUCCESS) {
-        config_file = _krb5_parse_reg_value_as_string(NULL, key, "config",
-                                                      REG_NONE, 0);
+        config_file = _krb5_parse_reg_value_as_multi_string(NULL, key, "config",
+                                                            REG_NONE, 0, PATH_SEP);
         RegCloseKey(key);
     }
 
@@ -750,8 +750,8 @@ _krb5_get_default_config_config_files_from_registry()
 
     rcode = RegOpenKeyEx(HKEY_LOCAL_MACHINE, KeyName, 0, KEY_READ, &key);
     if (rcode == ERROR_SUCCESS) {
-        config_file = _krb5_parse_reg_value_as_string(NULL, key, "config",
-                                                      REG_NONE, 0);
+        config_file = _krb5_parse_reg_value_as_multi_string(NULL, key, "config",
+                                                            REG_NONE, 0, PATH_SEP);
         RegCloseKey(key);
     }
 
