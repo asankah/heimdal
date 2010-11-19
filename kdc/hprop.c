@@ -412,7 +412,7 @@ ka_dump(struct prop_data *pd, const char *file)
 
 struct getargs args[] = {
     { "master-key", 'm', arg_string, &mkeyfile, "v5 master key file", "file" },
-    { "database", 'd',	arg_string, &database, "database", "file" },
+    { "database", 'd',	arg_string, rk_UNCONST(&database), "database", "file" },
     { "source",   0,	arg_string, &source_type, "type of database to read",
       "heimdal"
       "|mit-dump"
@@ -429,7 +429,8 @@ struct getargs args[] = {
 #ifdef KRB4
     { "kaspecials", 'S', arg_flag,   &kaspecials_flag, "dump KASPECIAL keys"},
 #endif
-    { "keytab",   'k',	arg_string, &ktname, "keytab to use for authentication", "keytab" },
+    { "keytab",   'k',	arg_string, rk_UNCONST(&ktname),
+      "keytab to use for authentication", "keytab" },
     { "v5-realm", 'R',  arg_string, &local_realm, "v5 realm to use" },
     { "decrypt",  'D',  arg_flag,   &decrypt_flag,   "decrypt keys" },
     { "encrypt",  'E',  arg_flag,   &encrypt_flag,   "encrypt keys" },
