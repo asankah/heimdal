@@ -54,6 +54,7 @@
 #ifdef HAVE_WINSOCK
 /* Declarations for Microsoft Windows */
 
+#include<winsock2.h>
 #include<ws2tcpip.h>
 
 /*
@@ -239,10 +240,6 @@ struct sockaddr_dl;
 #include <sys/time.h>
 #else
 #include <time.h>
-#endif
-
-#ifdef HAVE_WS2TCPIP_H
-#include <ws2tcpip.h>
 #endif
 
 #ifdef HAVE_PATHS_H
